@@ -1,0 +1,38 @@
+﻿@model Report
+
+
+<div class="text-center">
+
+    <h1 class="display-4">Kümes Similasyonuna Hoşgeldiniz</h1>
+
+    <form asp-action="Index" method="post">
+
+        <input type="text" placeholder="Döngü Sayısı Giriniz" name="count" />
+
+        <button type="submit">Similasyonu Başlat</button>
+
+    </form>
+
+    <a href="@Url.Action("MyTest", "Home")">Benim Testlerim</a> 
+
+
+    <div>
+        @if (Model is not null)
+        {
+            <h1>Döngü Sayısı: @Model.LoopCount</h1>
+            <h1>Şuanki Yaşayan Dişiler Arasındaki Max Yaş(*): @Model.MaxAgeFemale</h1>
+            <h1>Şuanki Yaşayan Erkekler Arasındaki Max Yaş(*): @Model.MaxAgeMale</h1>
+            <h1>Popülasyon: @Model.Population</h1>
+            <h1>Dişi Popülasyonu: @Model.PopulationFemale</h1>
+            <h1>Erkek Popülasyonu: @Model.PopulationMale</h1>
+            <h1>Ölüm Sayısı: @Model.DeathCount</h1>
+            <h1>Bir doğumda en çok yavrulama saysısı : @Model.MaxPerBirth</h1>
+            <h3>(*)=> Aylık</h3>
+
+        }
+
+    </div>
+
+
+
+</div>
